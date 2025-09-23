@@ -1,1 +1,78 @@
-歡迎來到輝煌的網站
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>我的青春正輝煌</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			min-height: 100vh;
+			background: linear-gradient(120deg, #ff512f 0%, #dd2476 100%);
+			color: #fff;
+			font-family: 'Segoe UI', '微軟正黑體', Arial, sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		.container {
+			background: rgba(255,255,255,0.1);
+			border-radius: 20px;
+			box-shadow: 0 4px 32px rgba(221,36,118,0.15);
+			padding: 2.5em 3.5em;
+			text-align: center;
+			backdrop-filter: blur(2px);
+		}
+		h1 {
+			font-size: 3em;
+			font-weight: bold;
+			letter-spacing: 0.12em;
+			margin-bottom: 0.5em;
+			background: linear-gradient(90deg, #ff512f, #f9d423, #dd2476);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-fill-color: transparent;
+			text-shadow: 0 2px 24px #f9d423, 0 1px 0 #fff;
+			animation: shine 2s infinite alternate;
+		}
+		@keyframes shine {
+			from { filter: brightness(1); }
+			to { filter: brightness(1.2); }
+		}
+		p {
+			font-size: 1.4em;
+			color: #fff;
+			margin-top: 0.5em;
+			line-height: 1.7;
+			text-shadow: 0 1px 8px #dd2476;
+		}
+		.btn {
+			margin-top: 2em;
+			padding: 0.8em 2em;
+			font-size: 1.1em;
+			font-weight: 600;
+			color: #fff;
+			background: linear-gradient(90deg, #f9d423, #ff512f);
+			border: none;
+			border-radius: 30px;
+			box-shadow: 0 2px 12px #ff512f88;
+			cursor: pointer;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+		.btn:hover {
+			transform: scale(1.08);
+			box-shadow: 0 4px 24px #dd2476cc;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>我的青春正輝煌</h1>
+		<p>青春如火，熱血沸騰。<br>勇敢追夢，閃耀屬於自己的光芒！</p>
+		<button class="btn">展開青春旅程</button>
+	</div>
+</body>
+</html>
