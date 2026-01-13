@@ -1,8 +1,6 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<html lang="zh-Hant"><head></head><body>-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>個人成果 Banner</title>
   <style>
     :root{
@@ -13,7 +11,7 @@
       --glass: rgba(255,255,255,0.03);
       --radius:12px;
       color-scheme: dark;
-      font-family: Inter, "Segoe UI", Roboto, "Noto Sans TC", system-ui, -apple-system, sans-serif;
+      font-family: Inter, "Segoe UI", Roboto, "Noto Sans TC", system-ui, apple-system, sans-serif;
     }
     *{box-sizing:border-box}
     body{
@@ -168,116 +166,20 @@
       .thumb{height:140px}
     }
   </style>
-</head>
-<body>
-  <section class="portfolio-banner" aria-label="個人成果展示">
-    <div class="banner-intro" aria-hidden="false">
-      <div class="kicker">個人作品集</div>
-      <h1 class="title">精選三項代表作品</h1>
-      <p class="subtitle">以下為完成的三個作品：點選「查看專案」可開啟詳細頁面或示範。</p>
-    </div>
 
-    <div class="projects" role="list">
-      <!-- Project 1 -->
-      <article class="project" role="listitem">
-        <div class="thumb" aria-hidden="true">
-          <!-- 可換成 <img src="..."> -->
-          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#06b6d4" />
-                <stop offset="1" stop-color="#6366f1" />
-              </linearGradient>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#g1)"/>
-            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="28" fill="rgba(255,255,255,0.95)">Project A</text>
-          </svg>
-        </div>
 
-        <div>
-          <div class="meta">
-            <p class="p-title">企業內部儀表板</p>
-            <span style="color:var(--muted);font-size:12px">React • D3 • Node</span>
-          </div>
-          <p class="p-desc">為大型客戶建立即時數據分析儀表板，包含多維度篩選、圖表互動與報表匯出機制，滿足 SLA 與高並發需求。</p>
-
-          <div class="actions">
-            <a class="btn" href="#" aria-label="查看企業內部儀表板">查看專案</a>
-            <a class="btn" href="#" aria-label="專案原始碼 (企業內部儀表板)">原始碼</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 2 -->
-      <article class="project" role="listitem">
-        <div class="thumb" aria-hidden="true">
-          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
-            <defs>
-              <linearGradient id="g2" x1="0" x2="1">
-                <stop offset="0" stop-color="#ef4444" />
-                <stop offset="1" stop-color="#f59e0b" />
-              </linearGradient>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#g2)"/>
-            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#fff">Project B</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="meta">
-            <p class="p-title">品牌網站重新設計</p>
-            <span style="color:var(--muted);font-size:12px">UX • Figma • Gatsby</span>
-          </div>
-          <p class="p-desc">負責整體 UX 與前端實作，將轉換率提升 28%，採用可重用元件與無障礙設計原則。</p>
-
-          <div class="actions">
-            <a class="btn" href="#" aria-label="查看品牌網站重新設計">查看專案</a>
-            <a class="btn" href="#" aria-label="查看品牌網站設計稿">設計稿</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 3 -->
-      <article class="project" role="listitem">
-        <div class="thumb" aria-hidden="true">
-          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
-            <defs>
-              <linearGradient id="g3" x1="0" x2="1">
-                <stop offset="0" stop-color="#10b981" />
-                <stop offset="1" stop-color="#14b8a6" />
-              </linearGradient>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#g3)"/>
-            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#042027">Project C</text>
-          </svg>
-        </div>
-
-        <div>
-          <div class="meta">
-            <p class="p-title">自動化部署平台</p>
-            <span style="color:var(--muted);font-size:12px">K8s • Terraform • CI/CD</span>
-          </div>
-          <p class="p-desc">搭建企業級自動化部署與基礎設施管理流程，縮短部署時間並強化回復能力與日誌追蹤。</p>
-
-          <div class="actions">
-            <a class="btn" href="#" aria-label="查看自動化部署平台">查看專案</a>
-            <a class="btn" href="#" aria-label="閱讀技術文件">技術文件</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-</body>
-</html>
+  
 
 
 
 
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>個人成果 Banner</title>
   <style>
     :root {
@@ -367,32 +269,116 @@
     @media (max-width: 800px) {
       .projects { flex-direction: column; gap: 16px; }
     }
-  </style>
-</head>
-<body>
-  <div class="banner">
-    <div class="banner-title">我的精選作品</div>
-    <div class="projects">
-      <div class="project">
-        <div class="thumb">A</div>
-        <div class="p-title">儀表板</div>
-        <div class="p-desc">即時數據分析，互動圖表。</div>
-        <a class="btn" href="#">查看</a>
-      </div>
-      <div class="project">
-        <div class="thumb">B</div>
-        <div class="p-title">品牌網站</div>
-        <div class="p-desc">設計優化，提升轉換率。</div>
-        <a class="btn" href="#">查看</a>
-      </div>
-      <div class="project">
-        <div class="thumb">C</div>
-        <div class="p-title">自動部署</div>
-        <div class="p-desc">一鍵部署，高效管理。</div>
-        <a class="btn" href="#">查看</a>
-      </div>
+  </style><section class="portfolio-banner" aria-label="個人成果展示">
+    <div class="banner-intro" aria-hidden="false">
+      <div class="kicker">個人作品集</div>
+      <h1 class="title">精選三項代表作品</h1>
+      <p class="subtitle">以下為完成的三個作品：點選「查看作品」可開啟詳細頁面或示範。</p>
     </div>
-  </div>
-</body>
 
-</html>
+    <div class="projects" role="list">
+      <!-- Project 1 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <!-- 可換成 <img src="..."> -->
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#06b6d4"></stop>
+                <stop offset="1" stop-color="#6366f1"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="28" fill="rgba(255,255,255,0.95)">Project A</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            
+            <span style="color:var(--muted);font-size:12px">第一項作品</span>
+          </div>
+          <p class="p-desc">課堂中製作的個人網頁</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/oldindex.html" aria-label="查看企業內部儀表板">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0" stop-color="#ef4444"></stop>
+                <stop offset="1" stop-color="#f59e0b"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g2)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#fff">Project B</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            <p class="p-title">第二項作品</p>
+            <span style="color:var(--muted);font-size:12px"></span>
+          </div>
+          <p class="p-desc">包含基礎的 HTML 與 CSS 排版練習。整體設計簡單明瞭，方便訪客瀏覽各項內容，並作為個人作品集的早期成果展示，呈現作者在網頁開發基礎技術的掌握與學習歷程。</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/namecard.html" aria-label="查看品牌網站重新設計">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g3" x1="0" x2="1">
+                <stop offset="0" stop-color="#10b981"></stop>
+                <stop offset="1" stop-color="#14b8a6"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g3)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#042027">Project C</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            <p class="p-title">自動化部署平台</p>
+            <span style="color:var(--muted);font-size:12px">K8s • Terraform • CI/CD</span>
+          </div>
+          <p class="p-desc">這個靜態網頁展示了經典中文詩詞作品，內容包含李白的《靜夜思》和王維的《相思》，以簡潔的排版讓訪客可以清楚閱讀傳統詩詞。整體設計採用靜態 HTML，是使用 GitHub Pages 部署的小型作品示範，適合作為網頁基礎練習成果展示。</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/111417040/0930/index.html" aria-label="查看作品">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  
+
+
+
+</body></html>
