@@ -1,0 +1,384 @@
+-<html lang="zh-Hant"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>個人成果 Banner</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#9ca3af;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Roboto, "Noto Sans TC", system-ui, apple-system, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:
+        linear-gradient(180deg, rgba(6,8,15,0.6), rgba(6,8,15,0.6)),
+        radial-gradient(800px 400px at 10% 10%, rgba(6,182,212,0.06), transparent 10%),
+        radial-gradient(600px 300px at 90% 80%, rgba(99,102,241,0.04), transparent 10%),
+        var(--bg);
+      font-size:16px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px;
+      color:#e6edf3;
+    }
+
+    /* Banner container */
+    .portfolio-banner{
+      max-width:1200px;
+      margin:0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      display:grid;
+      gap:20px;
+      align-items:start;
+      grid-template-columns: 1fr 720px;
+    }
+
+    /* Left column: heading */
+    .banner-intro{
+      padding:20px 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .kicker{
+      display:inline-block;
+      padding:6px 10px;
+      background:var(--glass);
+      color:var(--muted);
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .title{
+      font-size:28px;
+      margin:6px 0 10px 0;
+      letter-spacing:-0.4px;
+      color:#f8fafc;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    /* Right column: cards grid */
+    .projects{
+      display:grid;
+      gap:16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.005));
+      border-radius:var(--radius);
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+      cursor:default;
+    }
+    .project:focus-within,
+    .project:hover{
+      transform:translateY(-6px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    .thumb{
+      width:100%;
+      height:120px;
+      border-radius:10px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#0ea5a4 0%, #6366f1 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,0.95);
+      font-weight:600;
+      font-size:14px;
+    }
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .p-title{
+      font-weight:600;
+      color:#e6f0f6;
+      font-size:15px;
+      margin:0;
+    }
+    .p-desc{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+      margin:0;
+      flex:1;
+    }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      margin-top:6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(6,182,212,0.12);
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      transition:background .18s, color .18s, transform .12s;
+    }
+    .btn:focus,
+    .btn:hover{
+      background:rgba(6,182,212,0.06);
+      color:#bff7fb;
+      transform:translateY(-2px);
+    }
+
+    /* responsive */
+    @media (max-width:1000px){
+      .portfolio-banner{grid-template-columns: 1fr; padding:20px;}
+      .projects{grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width:640px){
+      body{padding:18px}
+      .projects{grid-template-columns: 1fr;}
+      .thumb{height:140px}
+    }
+  </style>
+</head>
+<body>
+  <section class="portfolio-banner" aria-label="個人成果展示">
+    <div class="banner-intro" aria-hidden="false">
+      <div class="kicker">個人作品集</div>
+      <h1 class="title">精選三項代表作品</h1>
+      <p class="subtitle">以下為完成的三個作品：點選「查看作品」可開啟詳細頁面或示範。</p>
+    </div>
+
+    <div class="projects" role="list">
+      <!-- Project 1 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <!-- 可換成 <img src="..."> -->
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#06b6d4"></stop>
+                <stop offset="1" stop-color="#6366f1"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g1)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="28" fill="rgba(255,255,255,0.95)">Project A</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            
+            <span style="color:var(--muted);font-size:12px">第一項作品</span>
+          </div>
+          <p class="p-desc">課堂中製作的個人網頁</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/oldindex.html" aria-label="查看企業內部儀表板">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0" stop-color="#ef4444"></stop>
+                <stop offset="1" stop-color="#f59e0b"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g2)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#fff">Project B</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            <p class="p-title">第二項作品</p>
+            <span style="color:var(--muted);font-size:12px"></span>
+          </div>
+          <p class="p-desc">包含基礎的 HTML 與 CSS 排版練習。整體設計簡單明瞭，方便訪客瀏覽各項內容，並作為個人作品集的早期成果展示，呈現作者在網頁開發基礎技術的掌握與學習歷程。</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/namecard.html" aria-label="查看品牌網站重新設計">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project" role="listitem">
+        <div class="thumb" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="display:block">
+            <defs>
+              <linearGradient id="g3" x1="0" x2="1">
+                <stop offset="0" stop-color="#10b981"></stop>
+                <stop offset="1" stop-color="#14b8a6"></stop>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#g3)"></rect>
+            <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#042027">Project C</text>
+          </svg>
+        </div>
+
+        <div>
+          <div class="meta">
+            <p class="p-title">自動化部署平台</p>
+            <span style="color:var(--muted);font-size:12px">K8s • Terraform • CI/CD</span>
+          </div>
+          <p class="p-desc">這個靜態網頁展示了經典中文詩詞作品，內容包含李白的《靜夜思》和王維的《相思》，以簡潔的排版讓訪客可以清楚閱讀傳統詩詞。整體設計採用靜態 HTML，是使用 GitHub Pages 部署的小型作品示範，適合作為網頁基礎練習成果展示。</p>
+
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/111417040/0930/index.html" aria-label="查看作品">
+   查看作品
+</a>
+
+            
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>個人成果 Banner</title>
+  <style>
+    :root {
+      --main: #1e293b;
+      --accent: #38bdf8;
+      --bg: #f1f5f9;
+      font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--main);
+      padding: 40px;
+    }
+    .banner {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(30,41,59,0.08);
+      padding: 32px 24px;
+    }
+    .banner-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 24px;
+      color: var(--main);
+      text-align: center;
+    }
+    .projects {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    .project {
+      background: var(--bg);
+      border-radius: 10px;
+      flex: 1 1 0;
+      padding: 18px 12px;
+      box-shadow: 0 2px 8px rgba(30,41,59,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+    }
+    .thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .p-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--main);
+      text-align: center;
+    }
+    .p-desc {
+      font-size: 13px;
+      color: var(--main);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 13px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 4px;
+      transition: background .2s;
+    }
+    .btn:hover {
+      background: #0ea5e9;
+    }
+    @media (max-width: 800px) {
+      .projects { flex-direction: column; gap: 16px; }
+    }
+  </style>
+
+
+  
+
+
+
+</body></html>
