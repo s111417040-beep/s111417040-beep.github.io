@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>個人成果 Banner</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#9ca3af;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Roboto, "Noto Sans TC", system-ui, -apple-system, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:
+        linear-gradient(180deg, rgba(6,8,15,0.6), rgba(6,8,15,0.6)),
+        radial-gradient(800px 400px at 10% 10%, rgba(6,182,212,0.06), transparent 10%),
+        radial-gradient(600px 300px at 90% 80%, rgba(99,102,241,0.04), transparent 10%),
+        var(--bg);
+      font-size:16px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px;
+      color:#e6edf3;
+    }
+
+    .portfolio-banner{
+      max-width:1200px;
+      margin:0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      display:grid;
+      gap:20px;
+      align-items:start;
+      grid-template-columns: 1fr 720px;
+    }
+
+    .banner-intro{
+      padding:20px 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .kicker{
+      display:inline-block;
+      padding:6px 10px;
+      background:var(--glass);
+      color:var(--muted);
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .title{
+      font-size:28px;
+      margin:6px 0 10px 0;
+      letter-spacing:-0.4px;
+      color:#f8fafc;
+    }
+    .subtitle{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .projects{
+      display:grid;
+      gap:16px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.005));
+      border-radius:var(--radius);
+      padding:14px;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+      cursor:default;
+    }
+    .project:focus-within,
+    .project:hover{
+      transform:translateY(-6px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    .thumb{
+      width:100%;
+      height:120px;
+      border-radius:10px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#0ea5a4 0%, #6366f1 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,0.95);
+      font-weight:600;
+      font-size:14px;
+    }
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .p-title{
+      font-weight:600;
+      color:#e6f0f6;
+      font-size:15px;
+      margin:0;
+    }
+    .p-desc{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+      margin:0;
+      flex:1;
+    }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      margin-top:6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background:transparent;
+      color:var(--accent);
+      border:1px solid rgba(6,182,212,0.12);
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      transition:background .18s, color .18s, transform .12s;
+    }
+    .btn:focus,
+    .btn:hover{
+      background:rgba(6,182,212,0.06);
+      color:#bff7fb;
+      transform:translateY(-2px);
+    }
+
+    @media (max-width:1000px){
+      .portfolio-banner{grid-template-columns: 1fr; padding:20px;}
+      .projects{grid-template-columns: repeat(2, 1fr);}
+    }
+    @media (max-width:640px){
+      body{padding:18px}
+      .projects{grid-template-columns: 1fr;}
+      .thumb{height:140px}
+    }
+  </style>
+</head>
+<body>
+  <section class="portfolio-banner" aria-label="個人成果展示">
+    <div class="banner-intro">
+      <div class="kicker">個人作品集</div>
+      <h1 class="title">精選三項代表作品</h1>
+      <p class="subtitle">以下為完成的三個作品：點選「查看作品」可開啟詳細頁面或示範。</p>
+    </div>
+
+    <div class="projects" role="list">
+      <!-- Project 1 -->
+      <article class="project" role="listitem">
+        <div class="thumb">Project A</div>
+        <div>
+          <div class="meta">
+            <span style="color:var(--muted);font-size:12px">第一項作品</span>
+          </div>
+          <p class="p-desc">課堂中製作的個人網頁</p>
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/oldindex.html">查看作品</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project" role="listitem">
+        <div class="thumb">Project B</div>
+        <div>
+          <div class="meta">
+            <p class="p-title">第二項作品</p>
+          </div>
+          <p class="p-desc">包含基礎的 HTML 與 CSS 排版練習，整體設計簡單明瞭，方便訪客瀏覽各項內容。</p>
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/namecard.html">查看作品</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project" role="listitem">
+        <div class="thumb">Project C</div>
+        <div>
+          <div class="meta">
+            <p class="p-title">自動化部署平台</p>
+            <span style="color:var(--muted);font-size:12px">K8s • Terraform • CI/CD</span>
+          </div>
+          <p class="p-desc">展示經典中文詩詞作品，採用靜態 HTML，使用 GitHub Pages 部署的小型作品示範。</p>
+          <div class="actions">
+            <a class="btn" href="https://s111417040-beep.github.io/111417040/0930/index.html">查看作品</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</body>
+</html>
+
